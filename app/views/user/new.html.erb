@@ -1,0 +1,26 @@
+
+<%= form_with User: @user do |first|%>
+
+<div>
+<%=first.label :user_name%><br>
+<%=first.text_field :user_name%>
+</div>
+<br>
+
+<div>
+<%=first.label :email%><br>
+<%=first.email_field:email%>
+</div>
+<br>
+
+<div>
+<%=first.label :status%><br>
+<%=first.text_field :status%>
+</div>
+<br>
+
+<div>
+<%= first.submit "create"%>
+</div>
+<%end%>
+

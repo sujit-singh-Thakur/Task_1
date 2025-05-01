@@ -1,0 +1,12 @@
+<h1>User#show</h1>
+<p>Find me in app/views/user/index.html.erb</p>
+<%= @course.course_name%>
+
+
+<br>
+ <% @enrollments.each do |enrollment|%>
+ <tr>
+    <%= enrollment.user.user_name%><br>
+   
+    </tr>
+    <%end%>

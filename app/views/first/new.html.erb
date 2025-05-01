@@ -1,0 +1,14 @@
+
+
+
+
+
+<%= form_with User: @item do |form|%>
+<div>
+<%=form.label :user_name%><br>
+<%=form.text_field :user_name%>
+</div>
+<div>
+<%= form.submit%>
+</div>
+<%end%>

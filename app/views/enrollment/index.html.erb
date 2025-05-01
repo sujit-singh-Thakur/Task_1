@@ -1,0 +1,27 @@
+<%# <%= @user.User_name%>
+
+ <%# <table> %>
+    <%# <thead> %>
+        <%# <tr> %>
+            <%# <th> course title </th> %>
+            <%# <th> status</th> %>
+            <%# <th> enrolled_at </th> %>
+            <%# </tr> %>
+          <%# </thead> %>
+ <%# </table> %>
+ <%# <% @enrollments.each do |enrollment|%> 
+ <%# /<tr> %>
+    <%# <%= enrollment.course.title%> 
+   <%# // <%= enrollment.status%> 
+    <%# <%=enrollment.enrolled_at.strftime("%d %B %Y")%> 
+    <%# </tr> %> 
+
+
+<% @enrollment.each do |first|%>
+user_id := <%=first.user_id%><br> 
+course_id:= <%=first.course_id%><br>
+enrolled_time:= <%= first.enrolled_at%><br>
+status:=<%=first.status%><br>
+
+<%end%>
+<br>

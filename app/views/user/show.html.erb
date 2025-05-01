@@ -1,0 +1,21 @@
+<h1>User#show</h1>
+<p>Find me in app/views/user/index.html.erb</p>
+User-name:= <%= @user.user_name%>
+
+ <%# <table>
+    <thead>
+        <tr>
+            <th> course name </th>
+            <th> status</th>
+            <th> enrolled_at </th>
+            </tr>
+          </thead>
+ </table> %>
+<br>
+ <% @enrollments.each do |enrollment|%>
+ <tr>
+   Course_name:=  <%= enrollment.course.course_name%><br>
+    Status:= <%= enrollment.status%><br>
+   enrolled_time: =  <%=enrollment.enrolled_at%><br>
+    </tr>
+    <%end%>

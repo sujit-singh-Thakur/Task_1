@@ -1,0 +1,28 @@
+
+
+
+
+
+<%= form_with Enrollment: @enrollment do |first|%>
+
+<div>
+<%=first.label :email%><br>
+<%=first.email_field :email%>
+</div>
+<br>
+<div>
+<%=first.label :course_name%><br>
+<%=first.text_field :course_name%>
+</div>
+<br>
+
+<div>
+<%=first.label :status%><br>
+<%=first.text_field:status%>
+</div>
+<br>
+
+<div>
+<%= first.submit "create"%>
+</div>
+<%end%>

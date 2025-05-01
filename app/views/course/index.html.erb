@@ -1,0 +1,11 @@
+<h1>Course#index</h1>
+<p>Find me in app/views/course/index.html.erb</p>
+
+<% @courses.each do |first|%>
+<%= first.id%> 
+course_name :- <%= first.course_name%><br>
+description:- <%= first.description%><br>
+duration_week:- <%= first.duration_week%><br>
+status:- <%= first.status%><br>
+<br>
+<%end%>
