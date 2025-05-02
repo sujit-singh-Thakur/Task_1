@@ -1,7 +1,8 @@
 class EnrollmentController < ApplicationController
  
   def index 
-    @enrollment = Enrollment.all
+    # @enrollment = Enrollment.all
+    @enrollments = Enrollment.includes(:user,:course).all
   end
 
   def new
@@ -13,7 +14,6 @@ class EnrollmentController < ApplicationController
   
      email = params[:email]
      user = User.find_by(email: email)
-
      if user
       puts "user is valid #{email}"
      else
@@ -30,10 +30,10 @@ class EnrollmentController < ApplicationController
 
 
      @enrollment = Enrollment.new(
-      user_id: params[:user_id],
-      course_id: params[:course_id],
-      enrolled_at: Time.current,
-      status: 'not_started'
+      user_id: user.id,
+      course_id: course.id,
+      enrolled_at: Time.now,
+      status: params[:status]
      )
     
      if @enrollment.save
