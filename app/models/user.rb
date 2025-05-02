@@ -7,6 +7,5 @@ class User < ApplicationRecord
   validates :email,uniqueness:{message: "this email has already been taken "}
   validates :status,inclusion:{in:['not_started','in_progress','completed']}
 
-     scope :valid_scope,->(status) {where(status:status)}
-
+     scope :valid_scope, ->(status) { status.present? ? where(status: status) : all }
 end
