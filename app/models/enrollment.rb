@@ -6,15 +6,17 @@ class Enrollment < ApplicationRecord
   # validates :course_active
 
   before_validation :set_enrolled_at, on: :create
+  validates :course_name, presence: {message: "this course is not active"}, if: ->{status == true}
+ 
+   scope :not_started, -> {where(status:"not_started")} 
+   scope :in_progress, -> {where(status: "in_progress")}
+   scope :completed, ->{where(status: "completed")}
 
-
-  #  private
-  #  def course_active
-  #   errors
+  # before_validation :course_name_display
 
   private
   def set_enrolled_at
-    @item = self.enrolled_at ||= Time.now
+    self.enrolled_at ||= Time.now
   end
 
   
