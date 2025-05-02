@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "search/index"
   get "course/index"
   # root "first#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -43,6 +44,8 @@ resources :users
       get'/enrollment_index'=> 'enrollment#index'
       get'/user_index'=> 'user#index'
       get '/course_index'=> 'course#index'
+
+      get '/search_status' => 'search#index'
        
       
       # resources :courses, only: [:new, :create, :index]
